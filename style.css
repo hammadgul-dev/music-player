@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Cause:wght@100..900&family=Geom:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Mono:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sekuya&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Geom', 'Poppins', 'Noto Sans Mono', 'Cause', monospace;
+}
+
+:root{
+    --primaryBg : linear-gradient(135deg, #ff512f, #dd2476);
+    --controlBtnBg : linear-gradient(135deg, #ff512f, #dd2476);
+}
+
+body{
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    min-height: 100vh;
+    background: var(--primaryBg);
+}
+
+/* Music Container */
+.music-container{
+    width: 450px;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: black;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+}
+
+.voice{
+    width: 100px;
+    display: none;
+}
+
+.img-container{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    border: 5px solid #ff512f;
+}
+
+.img-container img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    -o-object-fit: cover;     
+    -webkit-object-fit: cover;
+}
+
+.phonk-name{
+    color: white;
+    letter-spacing: 2px;
+}
+
+.audio-range{
+    -webkit-appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    width: 290px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.volume-range-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.volume-range-container span{
+    color: white;
+    transform: rotate(180deg);
+    font-size: 1.5em;
+}
+
+.volume-range-container .volume-range{
+    -webkit-appearance: none;
+    width: 150px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* Audio COntrols */
+.audio-controls-btns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.audio-controls-btns button{
+    /* padding: 5px 22px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .5s linear;
+    -webkit-transition: all .5s linear; 
+    -moz-transition: all .5s linear;
+}
+
+.previous-btn , 
+.play-pause-btn , 
+.next-btn {
+    background: var(--controlBtnBg);
+    position: relative;
+}
+
+.previous-btn:hover , 
+.play-pause-btn:hover , 
+.next-btn:hover{
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+}
+
+.previous-btn:active , 
+.play-pause-btn:active , 
+.next-btn:active{
+    transform: scale(105%);
+    -webkit-transform: scale(1.05); 
+    -moz-transform: scale(1.05);
+}
+
+
+/* Classes Used Insdier JavaScript */
+.imgContainerAnimation{
+    animation: boxShadowAnimation 1s linear infinite;
+    -webkit-animation: boxShadowAnimation 1s linear infinite; 
+    -moz-animation: boxShadowAnimation 1s linear infinite;
+}
+
+@keyframes boxShadowAnimation{
+    0%{
+        box-shadow:  0px 0px 0px rgba(255, 255, 255, 1);
+        -webkit-box-shadow:  0px 0px 0px rgba(255, 255, 255, 1); 
+    }
+    50%{
+        box-shadow:  0px 0px 20px rgba(255, 255, 255, 1);
+        -webkit-box-shadow:  0px 0px 20px rgba(255, 255, 255, 1);
+    }
+    100%{
+        box-shadow:  0px 0px 0px rgb(255, 255, 255);
+        -webkit-box-shadow:  0px 0px 0px rgb(255, 255, 255);
+    }
+}
+
+.voiceDisplay{
+    display: block;
+}
+
+
+
+/* Media Query */
+
+@media only screen and (max-width : 374px){
+
+    .music-container{
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0px;
+    }
+    input[type="range"]{ width: 90%; }
+    .img-container{
+        width: 180px;
+        height: 180px;
+    }
+
+}
+
